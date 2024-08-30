@@ -25,18 +25,18 @@ print("Your mission is to find the treasure.")
 
 #First Question
 print("You make your way onto the island and come across a road.\n")
-left_right=input("Which way would you like to go left or right?\n")
+left_right=input("Which way would you like to go left or right?\n").lower()
 if left_right == "left":
 
     # Second Question
     print("You've made you way on one side of a river. You can swim across or wait for a boat to pick you up.")
-    swim=input("Would you like to swim or wait?\n")
+    swim=input("Would you like to swim or wait?\n").lower()
     if swim == "wait":
 
     # Third Question
         print("Crossing the river has brought you to the entrance of a crypt with stairs leading downwards.")
         print("Making your way down has brought you to an opening.")
-        door=input("You arrive in front of 3 doors, each of which are colored differently. Which color door will you choose: blue, red or yellow?\n")
+        door=input("You arrive in front of 3 doors, each of which are colored differently. Which color door will you choose: blue, red or yellow?\n").lower()
 
         # Fourth Question
         if door == "yellow":
