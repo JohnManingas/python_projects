@@ -27,50 +27,34 @@ scissors = '''
 ---.__(___)
 '''
 
+#Place rock paper scissors into a list
+game_list=[rock,paper,scissors]
+
 # Import random to utilize rand functions
 import random
 
 # Acquire user input
 # Transform into integer for if-else conditions
 user_choice=int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors.\n"))
+print(game_list[user_choice])
 
 # Acquire random computer input
-computer_input=random.randint(0,2)
+# Output image of computer choice
+computer_choice=random.randint(0,2)
+print("Computer chose:")
+print(game_list[computer_choice])
 
-# Print output for user input
-# Within each user input, include if statements for computer input conditions
-if user_choice == 0:
-    print(rock)
-    if computer_input == 0:
-        print(f"Computer chose: {rock}")
-        print("It's a draw")
-    elif computer_input == 1:
-        print(f"Computer chose: {paper}")
-        print("You lose")
-    else:
-        print(f"Computer chose: {scissors}")
-        print("You won!")
-elif user_choice == 1:
-    print(paper)
-    if computer_input == 0:
-        print(f"Computer chose: {rock}")
-        print("You won!")
-    elif computer_input == 1:
-        print(f"Computer chose: {paper}")
-        print("It's a draw")
-    else:
-        print(f"Computer chose: {scissors}")
-        print("You lose")
-elif user_choice == 2:
-    print(scissors)
-    if computer_input == 0:
-        print(f"Computer chose: {rock}")
-        print("You lose")
-    elif computer_input == 1:
-        print(f"Computer chose: {paper}")
-        print("You won!")
-    else:
-        print(f"Computer chose: {scissors}")
-        print("It's a draw")
-else:
-    print("Please choose 0,1, or 2")
+# Use if-else statements to establish win condition logic
+if user_choice >= 3 or user_choice < 0:
+    print("You typed an invalid number. You lose!")
+elif user_choice == 0 and computer_choice == 2:
+    print("You win!")
+elif computer_choice == 0 and user_choice == 2:
+    print("You lose!")
+elif computer_choice > user_choice:
+    print("you lose!")
+elif user_choice > computer_choice:
+    print("You win!")
+elif computer_choice == user_choice:
+    print("It's a draw!")
+
